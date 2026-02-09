@@ -148,7 +148,7 @@ export default function Home() {
                   onDrop={handleDrop}
                   className="py-24"
                   getDropOperation={types => (
-                    ['image/jpeg', 'image/heic'].some(t => types.has(t))
+                    ['image/jpeg', 'image/heic'].some(t => types.has(t)) ? 'copy' : 'cancel'
                   )}
                 >
                   <div className="flex flex-col items-center gap-3">
