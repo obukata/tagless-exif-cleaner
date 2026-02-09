@@ -33,7 +33,7 @@ export default function Card({ file, onDelete, onClear, onRotate }: CardProps) {
         />
         {file.status === 'done' && (
           <>
-            <div className="flex gap-4 absolute left-4 top-4">
+            <div className="flex gap-4 absolute left-4 right-4 top-4">
               {meta?.latitude && (
                 <Badge variant="danger">
                   <Icon icon="heroicons:exclamation-triangle-16-solid" />

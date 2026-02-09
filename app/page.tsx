@@ -173,17 +173,19 @@ export default function Home() {
                   </div>
                 </DropZone>
               </div>
-              <div className="grid grid-cols-12 gap-8 @container">
-                {files.map((file) => (
-                  <div key={file.id} className="col-span-12 @xl:col-span-6 @4xl:col-span-4">
-                    <Card
-                      file={file}
-                      onDelete={handleDelete}
-                      onClear={handleClear}
-                      onRotate={handleRotate}
-                    />
-                  </div>
-                ))}
+              <div className="@container">
+                <div className="grid grid-cols-12 gap-x-2 gap-y-8 @xl:gap-8">
+                  {files.map((file) => (
+                    <div key={file.id} className="col-span-12 @xl:col-span-6 @4xl:col-span-4">
+                      <Card
+                        file={file}
+                        onDelete={handleDelete}
+                        onClear={handleClear}
+                        onRotate={handleRotate}
+                      />
+                    </div>
+                  ))}
+                </div>
               </div>
               <div className="grid grid-cols-1 gap-4 @2xl:grid-cols-2">
                 <div className="bg-white relative before:absolute before:inset-0 before:m-auto before:w-[calc(100%-16px)] before:h-[calc(100%-16px)] before:bg-linear-to-t before:from-indigo-50/30 before:to-cyan-50/30 before:rounded-lg border border-neutral-100 rounded-2xl p-8 text-center space-y-4">
@@ -207,9 +209,9 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="sticky p-8 bottom-0 left-0 right-0 mx-auto z-10 flex gap-8">
+          <div className="sticky py-8 px-0 bottom-0 left-0 right-0 mx-auto z-10 flex gap-8">
             <Button
-              className="text-xl py-[1em] px-[2.5em] data-[disabled]:opacity-50"
+              className="@xl:text-xl py-[1em] px-[2.5em] data-[disabled]:opacity-50"
               isDisabled={files.length === 0}
               onPress={() => downloadAllAsZip(files)}
             >
