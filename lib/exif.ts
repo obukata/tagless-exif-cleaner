@@ -1,6 +1,6 @@
 import exifr from "exifr";
 
-const parseOptions = {
+const parseOptions: any = {
   tiff: true,
   ifd0: true, // カメラメーカー/モデル
   exif: true, // 撮影日時など

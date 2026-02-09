@@ -57,6 +57,7 @@ export async function downloadAllAsZip(files: ProcessedFile[]) {
   const JSZip = (await import('jszip')).default
   const zip = new JSZip()
   const folder = zip.folder('images_cleaned')
+  if (!folder) throw new Error('ZIPフォルダの作成に失敗しました')
 
   const doneFiles = files.filter(f => f.status === 'done')
   if (doneFiles.length === 0) {

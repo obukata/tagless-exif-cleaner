@@ -26,6 +26,7 @@
     "@iconify-icon/react": "^3.0.3",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
+    "@types/piexifjs": "^1.0.0",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
