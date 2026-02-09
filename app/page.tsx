@@ -211,7 +211,7 @@ export default function Home() {
           </div>
           <div className="sticky py-8 px-0 bottom-0 left-0 right-0 mx-auto z-10 flex gap-8">
             <Button
-              className="@xl:text-xl py-[1em] px-[2.5em] data-[disabled]:opacity-50"
+              className="@xl:text-xl py-[1em] px-[2.5em] data-disabled:opacity-50"
               isDisabled={files.length === 0}
               onPress={() => downloadAllAsZip(files)}
             >

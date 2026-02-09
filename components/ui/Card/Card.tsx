@@ -34,26 +34,26 @@ export default function Card({ file, onDelete, onClear, onRotate }: CardProps) {
         {file.status === 'done' && (
           <>
             <div className="flex gap-4 absolute left-4 right-4 top-4">
-              {meta?.latitude && (
+              {!!meta?.latitude && (
                 <Badge variant="danger">
                   <Icon icon="heroicons:exclamation-triangle-16-solid" />
                   <Text>GPS情報が含まれています</Text>
                 </Badge>
               )}
-              {meta?.Orientation && (
+              {!!meta?.Orientation && (
                 <Badge variant="warning">
                   <Icon icon="f7:rotate-left"></Icon>
                   <Text>回転情報が含まれています</Text>
                 </Badge>
               )}
-              {!meta?.latitude && !meta?.Orientation && (
+              {(!meta?.latitude && !meta?.Orientation) && (
                 <Badge variant="primary">
                   <Icon icon="heroicons:shield-check-16-solid" />
                   <Text>回転情報・GPS情報なし</Text>
                 </Badge>
               )}
             </div>
-            {!meta?.latitude && !meta?.Orientation && (
+            {(!meta?.latitude && !meta?.Orientation) && (
               <div className="absolute bottom-0 left-0 px-4 pb-4 flex w-full justify-between items-center">
                 <Button variant="secondary" onPress={() => onRotate(file.id, -90)}>
                   <Icon icon="ix:rotate-90-left" />
@@ -71,7 +71,7 @@ export default function Card({ file, onDelete, onClear, onRotate }: CardProps) {
         <div className="flex justify-between">
           <span className="text-xs text-neutral-400">{formatSize(file.file.size)}</span>
         </div>
-        {meta?.latitude || meta?.Orientation && (
+        {(!!meta?.latitude || !!meta?.Orientation) && (
           <div className="flex rounded-md py-2 gap-2">
             <Button onPress={() => onClear(file.id)}>
               <Icon icon="heroicons:shield-check-16-solid" />
